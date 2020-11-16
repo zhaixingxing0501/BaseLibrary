@@ -9,7 +9,7 @@
 #ifndef NotificationMacros_h
 #define NotificationMacros_h
 
-#pragma mark --  油站端定义 --
+#pragma mark - 油站端定义
 
 /// 第一弹出用户协议窗口
 #define kIsFristOpenUserAgreement @"isFristOpenUserAgreement"

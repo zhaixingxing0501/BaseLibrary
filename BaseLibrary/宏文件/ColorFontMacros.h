@@ -9,7 +9,7 @@
 #ifndef ColorFontMacros_h
 #define ColorFontMacros_h
 
-#pragma mark --  油站端颜色 --
+#pragma mark - 油站端颜色
 
 #define kColorMain        rgba(249, 115, 80, 1)
 #define kColorBackground  rgba(248, 248, 248, 1)

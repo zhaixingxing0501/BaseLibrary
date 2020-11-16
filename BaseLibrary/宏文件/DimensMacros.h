@@ -37,7 +37,7 @@
 /// 底部安全距离
 #define kSafeBottomHeight    (IS_PhoneXAll ? 34.0 : 0)
 
-#pragma mark --  油站端定义 --
+#pragma mark - 油站端定义
 
 /// 顶部弹出框的高度
 #define kTopPopViewHeight    214

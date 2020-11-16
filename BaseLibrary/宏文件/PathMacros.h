@@ -14,7 +14,7 @@
 #define kPathCache      [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 #define kPathSearch     [kPathDocument stringByAppendingPathComponent:@"Search.plist"]
 
-#pragma mark --  EG --
+#pragma mark - EG
 
 #define kPathDownloaded [kPathDocument stringByAppendingPathComponent:@"Downloaded.plist"]
 
