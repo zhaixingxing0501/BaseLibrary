@@ -46,7 +46,7 @@
 
 #pragma mark - 角度转弧度
 
-#define DEGREES_TO_RADIANS(d)   (d * M_PI / 180)
+#define kDegreeToRadians(d) (d * M_PI / 180)
 
 #pragma mark - 颜色
 

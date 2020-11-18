@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3E5B08DF67A81EC1CE2F4D39 /* Pods_BaseLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD099F5430DB7E4DBEE22BA /* Pods_BaseLibrary.framework */; };
+		9C54675B2563BC5F00FC81BE /* UITextFieldNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C54675A2563BC5F00FC81BE /* UITextFieldNumber.m */; };
+		9C5E725625636E3F00BB72F7 /* ScreenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E725525636E3F00BB72F7 /* ScreenButton.m */; };
+		9C5E725B25637B9D00BB72F7 /* PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E725925637B9D00BB72F7 /* PickerView.m */; };
+		9C82C11D2564F98800ABB580 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C82C11C2564F98800ABB580 /* Global.swift */; };
+		9C82C1202564FA0A00ABB580 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C82C11F2564FA0A00ABB580 /* UIViewExtension.swift */; };
+		9C82C1232564FA8600ABB580 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C82C1222564FA8600ABB580 /* UIColorExtension.swift */; };
 		9CB1219D25624AEB003FA52B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1219C25624AEB003FA52B /* AppDelegate.m */; };
 		9CB121A025624AEB003FA52B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1219F25624AEB003FA52B /* SceneDelegate.m */; };
 		9CB121A325624AEB003FA52B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB121A225624AEB003FA52B /* ViewController.m */; };
@@ -25,6 +31,16 @@
 
 /* Begin PBXFileReference section */
 		05E6E6D7CDE8D4C5D51D05FF /* Pods-BaseLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseLibrary.debug.xcconfig"; path = "Target Support Files/Pods-BaseLibrary/Pods-BaseLibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		9C5467592563BC5F00FC81BE /* UITextFieldNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITextFieldNumber.h; sourceTree = "<group>"; };
+		9C54675A2563BC5F00FC81BE /* UITextFieldNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITextFieldNumber.m; sourceTree = "<group>"; };
+		9C5E725425636E3F00BB72F7 /* ScreenButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ScreenButton.h; path = "BaseLibrary/组件库/ScreenButton.h"; sourceTree = SOURCE_ROOT; };
+		9C5E725525636E3F00BB72F7 /* ScreenButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ScreenButton.m; path = "BaseLibrary/组件库/ScreenButton.m"; sourceTree = SOURCE_ROOT; };
+		9C5E725925637B9D00BB72F7 /* PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerView.m; sourceTree = "<group>"; };
+		9C5E725A25637B9D00BB72F7 /* PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerView.h; sourceTree = "<group>"; };
+		9C82C11B2564F98700ABB580 /* BaseLibrary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C82C11C2564F98800ABB580 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		9C82C11F2564FA0A00ABB580 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		9C82C1222564FA8600ABB580 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9CB1219825624AEB003FA52B /* BaseLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB1219B25624AEB003FA52B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9CB1219C25624AEB003FA52B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,7 +67,6 @@
 		9CB121C525626C35003FA52B /* NSLayoutConstraint+Adapt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+Adapt.h"; sourceTree = "<group>"; };
 		9CB121D025626FC3003FA52B /* PathMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathMacros.h; sourceTree = "<group>"; };
 		9CB121D125626FC3003FA52B /* APIMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIMacros.h; sourceTree = "<group>"; };
-		9CB121D225626FC3003FA52B /* ColorFontMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorFontMacros.h; sourceTree = "<group>"; };
 		9CB121D325626FC3003FA52B /* NotificationMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationMacros.h; sourceTree = "<group>"; };
 		9CB121D425626FC3003FA52B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9CB121D525626FC3003FA52B /* UtilsMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsMacros.h; sourceTree = "<group>"; };
@@ -82,6 +97,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9C82C11A2564F8ED00ABB580 /* swift扩展 */ = {
+			isa = PBXGroup;
+			children = (
+				9C82C11C2564F98800ABB580 /* Global.swift */,
+				9C82C11F2564FA0A00ABB580 /* UIViewExtension.swift */,
+				9C82C1222564FA8600ABB580 /* UIColorExtension.swift */,
+				9C82C11B2564F98700ABB580 /* BaseLibrary-Bridging-Header.h */,
+			);
+			path = "swift扩展";
+			sourceTree = "<group>";
+		};
 		9CB1218F25624AEB003FA52B = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +129,7 @@
 		9CB1219A25624AEB003FA52B /* BaseLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				9C82C11A2564F8ED00ABB580 /* swift扩展 */,
 				9CB121CE25626F61003FA52B /* 宏文件 */,
 				9CB121B925624C87003FA52B /* 组件库 */,
 				9CB121B825624C6C003FA52B /* 工具类 */,
@@ -143,6 +170,12 @@
 		9CB121B925624C87003FA52B /* 组件库 */ = {
 			isa = PBXGroup;
 			children = (
+				9C5E725A25637B9D00BB72F7 /* PickerView.h */,
+				9C5E725925637B9D00BB72F7 /* PickerView.m */,
+				9C5467592563BC5F00FC81BE /* UITextFieldNumber.h */,
+				9C54675A2563BC5F00FC81BE /* UITextFieldNumber.m */,
+				9C5E725425636E3F00BB72F7 /* ScreenButton.h */,
+				9C5E725525636E3F00BB72F7 /* ScreenButton.m */,
 			);
 			path = "组件库";
 			sourceTree = "<group>";
@@ -151,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				9CB121D125626FC3003FA52B /* APIMacros.h */,
-				9CB121D225626FC3003FA52B /* ColorFontMacros.h */,
 				9CB121D725626FC3003FA52B /* DimensMacros.h */,
 				9CB121D625626FC3003FA52B /* Macros.h */,
 				9CB121D325626FC3003FA52B /* NotificationMacros.h */,
@@ -181,6 +213,7 @@
 				9CB1219425624AEB003FA52B /* Sources */,
 				9CB1219525624AEB003FA52B /* Frameworks */,
 				9CB1219625624AEB003FA52B /* Resources */,
+				D52B4E72EC52E0F526E7C2AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,6 +234,7 @@
 				TargetAttributes = {
 					9CB1219725624AEB003FA52B = {
 						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -258,6 +292,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D52B4E72EC52E0F526E7C2AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaseLibrary/Pods-BaseLibrary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaseLibrary/Pods-BaseLibrary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseLibrary/Pods-BaseLibrary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -265,12 +316,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C82C1202564FA0A00ABB580 /* UIViewExtension.swift in Sources */,
 				9CB121C725626C35003FA52B /* NSLayoutConstraint+Adapt.m in Sources */,
+				9C5E725625636E3F00BB72F7 /* ScreenButton.m in Sources */,
 				9CB121C925626C35003FA52B /* Arithmetic.m in Sources */,
 				9CB121A325624AEB003FA52B /* ViewController.m in Sources */,
+				9C5E725B25637B9D00BB72F7 /* PickerView.m in Sources */,
 				9CB121C625626C35003FA52B /* DateHelper.m in Sources */,
+				9C82C11D2564F98800ABB580 /* Global.swift in Sources */,
+				9C54675B2563BC5F00FC81BE /* UITextFieldNumber.m in Sources */,
 				9CB1219D25624AEB003FA52B /* AppDelegate.m in Sources */,
 				9CB121CB25626C35003FA52B /* NSString+Extension.m in Sources */,
+				9C82C1232564FA8600ABB580 /* UIColorExtension.swift in Sources */,
 				9CB121C825626C35003FA52B /* FileHelper.m in Sources */,
 				9CB121AE25624AEE003FA52B /* main.m in Sources */,
 				9CB121CA25626C35003FA52B /* LogDescription.m in Sources */,
@@ -418,8 +475,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WW38662NQ;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseLibrary/宏文件/PrefixHeader.pch";
 				INFOPLIST_FILE = BaseLibrary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -428,6 +488,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zhaixingxing.BaseLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BaseLibrary/swift扩展/BaseLibrary-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -438,8 +501,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WW38662NQ;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseLibrary/宏文件/PrefixHeader.pch";
 				INFOPLIST_FILE = BaseLibrary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -448,6 +514,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zhaixingxing.BaseLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BaseLibrary/swift扩展/BaseLibrary-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
