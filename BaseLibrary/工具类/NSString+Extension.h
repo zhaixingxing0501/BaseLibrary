@@ -23,8 +23,6 @@ typedef enum : NSUInteger {
 
 @interface NSString (Extension)
 
-@property (nonatomic, strong) NSString *tes;
-
 #pragma mark - 号码校验
 
 /// 是否是手机号
@@ -62,6 +60,16 @@ typedef enum : NSUInteger {
 /// 字典转字符串
 /// @param dic 字典
 + (NSString *)dictionaryToJsonString:(NSDictionary *)dic;
+
+/// 字符串转字典
+- (NSDictionary *)toDictionary;
+
+/// 字符串转数组
+/// @param separator 分隔符
+- (NSArray *)toArraySeparator:(NSString *)separator;
+
+/// 字符串转数组( ,号分割)
+- (NSArray *)toArray;
 
 #pragma mark - 字符串大小
 
@@ -121,6 +129,9 @@ typedef enum : NSUInteger {
 /// @param jsonString 字符串
 + (NSDictionary *)stringToDictionary:(NSString *)jsonString;
 
+/// 字典转字符串
+- (NSString *)jsonString;
+
 @end
 
 @interface NSArray (Extension)
@@ -133,6 +144,9 @@ typedef enum : NSUInteger {
 /// @param jsonString 字符串
 /// @param separator 分隔符
 + (NSArray *)stringToArr:(NSString *)jsonString separator:(NSString *)separator;
+
+/// 数组转字符串
+- (NSString *)toString;
 
 @end
 

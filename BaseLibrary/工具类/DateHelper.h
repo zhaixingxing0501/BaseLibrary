@@ -33,11 +33,6 @@ typedef NS_ENUM (NSInteger, DateFormatType) {
 
 @interface DateHelper : NSObject
 
-/// 时间格式
-@property (nonatomic, strong) NSDateFormatter *dateFormatter;
-/// 时间格式枚举
-@property (nonatomic, assign) DateFormatType dateFormatType;
-
 #pragma mark - 秒及毫秒
 
 /// 获取当前时间戳(秒)
@@ -57,59 +52,59 @@ typedef NS_ENUM (NSInteger, DateFormatType) {
 
 /// 时间戳转日期(NSDate)
 /// @param timeStamp  时间戳
-- (NSDate *)timeStampToDateWithTimeStamp:(NSString *)timeStamp;
++ (NSDate *)timeStampToDateWithTimeStamp:(NSString *)timeStamp;
 
 /// 时间转日期Date
 /// @param time 时间字符串
 /// @param format 格式
-- (NSDate *)stringToDateWithTime:(NSString *)time format:(NSDateFormatter *)format;
++ (NSDate *)stringToDateWithTime:(NSString *)time format:(NSDateFormatter *)format;
 
 /// 时间转日期Date
 /// @param time 时间字符串
 /// @param formatType 格式
-- (NSDate *)stringToDateWithTime:(NSString *)time formatType:(DateFormatType)formatType;
++ (NSDate *)stringToDateWithTime:(NSString *)time formatType:(DateFormatType)formatType;
 
 #pragma mark - 字符串日期
 
 /// 获取当前时间(毫秒)
-- (NSString *)nowTimeWithformatType:(DateFormatType)formatType;
++ (NSString *)nowTimeWithformatType:(DateFormatType)formatType;
 
 /// 日期转时间
 /// @param date 日期
 /// @param format 格式
-- (NSString *)dateToStringWithDate:(NSDate *)date format:(NSDateFormatter *)format;
++ (NSString *)dateToStringWithDate:(NSDate *)date format:(NSDateFormatter *)format;
 
 /// 日期转时间
 /// @param date 日期
 /// @param formatType 格式
-- (NSString *)dateToStringWithDate:(NSDate *)date formatType:(DateFormatType)formatType;
++ (NSString *)dateToStringWithDate:(NSDate *)date formatType:(DateFormatType)formatType;
 
 /// 时间戳转时间
 /// @param timeStamp 时间字符串
 /// @param format 格式
-- (NSString *)timeStampToTimeWithTimeStamp:(NSString *)timeStamp format:(NSDateFormatter *)format;
++ (NSString *)timeStampToTimeWithTimeStamp:(NSString *)timeStamp format:(NSDateFormatter *)format;
 
 /// 时间戳转时间
 /// @param timeStamp 时间字符串
 /// @param formatType 格式
-- (NSString *)timeStampToTimeWithTimeStamp:(NSString *)timeStamp formatType:(DateFormatType)formatType;
++ (NSString *)timeStampToTimeWithTimeStamp:(NSString *)timeStamp formatType:(DateFormatType)formatType;
 
 #pragma mark - 时间间隔
 
 /// 距离date几个月的时间
 /// @param date 当前时间/相对时间
 /// @param month 相差几个月 负数代表之前时间
-- (NSDate *)timeIntervalWithDate:(NSDate *)date month:(NSInteger)month;
++ (NSDate *)timeIntervalWithDate:(NSDate *)date month:(NSInteger)month;
 
 /// 距离date几天的时间
 /// @param date 当前时间/相对时间
 /// @param day 相差几个天 负数代表之前时间
-- (NSDate *)timeIntervalWithDate:(NSDate *)date day:(NSInteger)day;
++ (NSDate *)timeIntervalWithDate:(NSDate *)date day:(NSInteger)day;
 
 /// 距离date几年的时间
 /// @param date 当前时间/相对时间
 /// @param year 相差几个年 负数代表之前时间
-- (NSDate *)timeIntervalWithDate:(NSDate *)date year:(NSInteger)year;
++ (NSDate *)timeIntervalWithDate:(NSDate *)date year:(NSInteger)year;
 
 @end
 

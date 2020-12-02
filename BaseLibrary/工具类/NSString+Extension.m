@@ -176,6 +176,30 @@
     }
 }
 
+- (NSDictionary *)toDictionary {
+    if (self == nil) {
+        return nil;
+    }
+    NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];
+
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
+
+    if (err) {
+        NSLog(@"json解析失败：%@", err);
+        return nil;
+    }
+    return dic;
+}
+
+- (NSArray *)toArraySeparator:(NSString *)separator {
+    return [NSArray stringToArr:self separator:separator];
+}
+
+- (NSArray *)toArray {
+    return [self toArraySeparator:@","];
+}
+
 #pragma mark - 字符串大小
 
 + (float)widthForString:(NSString *)str fontSize:(float)fontSize height:(float)height {
@@ -233,29 +257,36 @@
 
 - (NSString *)stringDivide100 {
     if (![self isPureInt] && ![self isPureFloat]) return @"";
-
-    NSDecimalNumber *number1 = [NSDecimalNumber decimalNumberWithString:self];
-    NSDecimalNumber *number2 = [NSDecimalNumber decimalNumberWithString:@"100"];
-    NSDecimalNumber *result = [number1 decimalNumberByDividingBy:number2];
+    NSDecimalNumber *result = [NSDecimalNumber decimalNumberWithString:@"0"];
+    @autoreleasepool {
+        NSDecimalNumber *number1 = [NSDecimalNumber decimalNumberWithString:self];
+        NSDecimalNumber *number2 = [NSDecimalNumber decimalNumberWithString:@"100"];
+        result = [number1 decimalNumberByDividingBy:number2];
+    }
 
     return result.stringValue;
 }
 
 - (NSString *)stringMultiply100 {
     if (![self isPureInt] && ![self isPureFloat]) return @"";
-
-    NSDecimalNumber *number1 = [NSDecimalNumber decimalNumberWithString:self];
-    NSDecimalNumber *number2 = [NSDecimalNumber decimalNumberWithString:@"100"];
-    NSDecimalNumber *result = [number1 decimalNumberByMultiplyingBy:number2];
-
+    NSDecimalNumber *result = [NSDecimalNumber decimalNumberWithString:@"0"];
+    @autoreleasepool {
+        NSDecimalNumber *number1 = [NSDecimalNumber decimalNumberWithString:self];
+        NSDecimalNumber *number2 = [NSDecimalNumber decimalNumberWithString:@"100"];
+        result = [number1 decimalNumberByMultiplyingBy:number2];
+    }
     return result.stringValue;
 }
 
 - (NSString *)stringFormatWithStyle:(NumberFormatter)style {
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    NSNumber *number = [formatter numberFromString:self];
-    formatter.numberStyle = (NSInteger)style;
-    return [formatter stringFromNumber:number];
+    NSString *string = @"";
+    @autoreleasepool {
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        NSNumber *number = [formatter numberFromString:self];
+        formatter.numberStyle = (NSInteger)style;
+        string = [formatter stringFromNumber:number];
+    }
+    return string;
 }
 
 @end
@@ -278,6 +309,28 @@
     return dic;
 }
 
+- (NSString *)jsonString {
+    NSError *parseError = nil;
+    if (self) {
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&parseError];
+
+        NSString *jsonString =  [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
+
+        //去掉字符串中的空格
+        NSRange range = { 0, jsonString.length };
+        [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
+
+        //去掉字符串中的换行符
+        NSRange range2 = { 0, mutStr.length };
+        [mutStr replaceOccurrencesOfString:@"\n" withString:@"" options:NSLiteralSearch range:range2];
+
+        return [mutStr copy];
+    } else {
+        return @"";
+    }
+}
+
 @end
 
 @implementation NSArray (Extension)
@@ -293,6 +346,23 @@
 /// @param separator 分隔符
 + (NSArray *)stringToArr:(NSString *)jsonString separator:(NSString *)separator {
     return [NSArray stringToArr:jsonString separator:separator];
+}
+
+- (NSString *)toString {
+    NSError *parseError = nil;
+    NSData *JSONData = [NSJSONSerialization dataWithJSONObject:self options:kNilOptions error:&parseError];
+    NSString *jsonString =  [[NSString alloc] initWithData:JSONData encoding:NSUTF8StringEncoding];
+    NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
+
+    //去掉字符串中的空格
+    NSRange range = { 0, jsonString.length };
+    [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
+
+    NSRange range2 = { 0, mutStr.length };
+    //去掉字符串中的换行符
+    [mutStr replaceOccurrencesOfString:@"\n" withString:@"" options:NSLiteralSearch range:range2];
+
+    return [mutStr copy];
 }
 
 @end
